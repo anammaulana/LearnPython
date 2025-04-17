@@ -1,0 +1,100 @@
+Woke bro! Sekarang kita masuk ke **Mini Project Basic Python** 🛠️ — biar semua yang udah lu pelajari langsung dipraktikkan jadi aplikasi kecil. Let's gooo!
+
+---
+
+## 🧪 Mini Project 1: **Program Manajemen Kontak Sederhana**
+
+### 🎯 Tujuan:
+- Menggunakan list dan dictionary
+- Memahami perulangan dan kondisi
+- Bisa tambah, lihat, dan hapus kontak
+
+---
+
+### 📝 Fitur yang akan kita buat:
+1. Tambah kontak (nama & nomor)
+2. Lihat semua kontak
+3. Hapus kontak berdasarkan nama
+4. Keluar dari program
+
+---
+
+### 🧠 Struktur data:
+Kita simpan kontak dalam bentuk list of dictionary.
+
+```python
+kontak = [
+    {"nama": "Budi", "nomor": "0812345678"},
+    {"nama": "Ani", "nomor": "0898765432"}
+]
+```
+
+---
+
+### 💻 Kode Programnya:
+```python
+kontak = []
+
+def tambah_kontak():
+    nama = input("Masukkan nama: ")
+    nomor = input("Masukkan nomor: ")
+    kontak.append({"nama": nama, "nomor": nomor})
+    print("Kontak berhasil ditambahkan!\n")
+
+def lihat_kontak():
+    if not kontak:
+        print("Belum ada kontak.")
+        return
+    print("\nDaftar Kontak:")
+    for idx, k in enumerate(kontak):
+        print(f"{idx+1}. {k['nama']} - {k['nomor']}")
+    print()
+
+def hapus_kontak():
+    nama = input("Masukkan nama kontak yang ingin dihapus: ")
+    for k in kontak:
+        if k["nama"].lower() == nama.lower():
+            kontak.remove(k)
+            print("Kontak berhasil dihapus!\n")
+            return
+    print("Kontak tidak ditemukan.\n")
+
+def menu():
+    while True:
+        print("=== Menu Kontak ===")
+        print("1. Tambah Kontak")
+        print("2. Lihat Kontak")
+        print("3. Hapus Kontak")
+        print("4. Keluar")
+
+        pilihan = input("Pilih menu (1-4): ")
+
+        if pilihan == "1":
+            tambah_kontak()
+        elif pilihan == "2":
+            lihat_kontak()
+        elif pilihan == "3":
+            hapus_kontak()
+        elif pilihan == "4":
+            print("Terima kasih, sampai jumpa!")
+            break
+        else:
+            print("Pilihan tidak valid!\n")
+
+menu()
+```
+
+---
+
+### 💡 Challenge Tambahan (kalau lu udah paham):
+- Tambahkan fitur **edit kontak**
+- Simpan kontak ke file `.txt`
+- Bikin validasi biar nama gak boleh kosong
+
+---
+
+Kalau project ini udah beres dan lu ngerasa nyaman, next kita bisa masuk ke:
+- **Project API sederhana pake Flask**
+- Atau bikin **game kecil** kayak tebak angka, kalkulator, dll
+
+Lu pilih yang mana bro buat lanjutan? Mau lanjut backend pake Flask atau explore mini game? 😎
